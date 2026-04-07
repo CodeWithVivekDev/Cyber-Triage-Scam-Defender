@@ -1,3 +1,11 @@
+---
+title: Cyber-Triage Scam Defender
+emoji: 👁️
+colorFrom: red
+colorTo: blue
+sdk: docker
+pinned: false
+---
 # Cyber-Triage Scam Defender
 
 **Team Name:** Code Verse
