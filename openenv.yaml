@@ -1,0 +1,17 @@
+spec_version: "1.0"
+team_id: "Code Verse"
+description: "Detection of AI-Generated Voice & Video Scams in Citizen Communications"
+
+environment:
+  name: "Cyber-Triage Scam Defender"
+  version: "1.0.0"
+  description: "Agent environment evaluating defensive responses against various modalities of digital scams targeting citizens, including text, voice, and video deepfakes."
+  entry_point: "env.py"
+
+tasks:
+  - id: "text-phishing-filter"
+    difficulty: "easy"
+  - id: "voice-clone-triage"
+    difficulty: "medium"
+  - id: "video-deepfake-auth"
+    difficulty: "hard"
