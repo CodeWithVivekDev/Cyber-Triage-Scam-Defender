@@ -1,0 +1,270 @@
+:root {
+    --bg-color: #05050A;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --border-color: rgba(255, 255, 255, 0.08);
+    --text-primary: #FFFFFF;
+    --text-secondary: #94A3B8;
+    
+    --primary-gradient: linear-gradient(135deg, #00F0FF 0%, #0057FF 100%);
+    --accent-blue: #00F0FF;
+    --accent-purple: #7000FF;
+    --accent-pink: #FF00E5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Background Glowing Orbs */
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    z-index: -1;
+    animation: float 20s infinite alternate;
+}
+.orb-1 {
+    top: -10%; left: -10%;
+    width: 500px; height: 500px;
+    background: rgba(0, 87, 255, 0.4);
+}
+.orb-2 {
+    bottom: -20%; right: -10%;
+    width: 600px; height: 600px;
+    background: rgba(112, 0, 255, 0.3);
+    animation-delay: -5s;
+}
+.orb-3 {
+    top: 40%; left: 40%;
+    width: 300px; height: 300px;
+    background: rgba(0, 240, 255, 0.2);
+    animation-delay: -10s;
+}
+
+@keyframes float {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(50px, 50px) scale(1.1); }
+}
+
+/* Main Container */
+.glass-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 60px 40px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.1);
+    z-index: 10;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+.logo-wrapper {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 20px auto;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.05);
+    padding: 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 30px rgba(0, 240, 255, 0.2);
+    transition: transform 0.4s ease;
+}
+.logo-wrapper:hover {
+    transform: translateY(-5px) scale(1.05);
+}
+.logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.gradient-text {
+    font-family: 'Outfit', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -1px;
+}
+.tagline {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    font-weight: 300;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Feature Cards */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-bottom: 60px;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    padding: 30px;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+.glass-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.icon-holder {
+    width: 50px; height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+.icon-holder.blue { background: rgba(0, 240, 255, 0.1); border: 1px solid rgba(0, 240, 255, 0.3); }
+.icon-holder.purple { background: rgba(112, 0, 255, 0.1); border: 1px solid rgba(112, 0, 255, 0.3); }
+.icon-holder.pink { background: rgba(255, 0, 229, 0.1); border: 1px solid rgba(255, 0, 229, 0.3); }
+
+.glass-card h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+}
+.glass-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Metrics Section */
+.metrics-section {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+    padding: 40px;
+    margin-bottom: 60px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+.metrics-section h2 {
+    font-family: 'Outfit', sans-serif;
+    margin-bottom: 24px;
+    font-size: 2rem;
+}
+.progress-bar-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+.progress-track {
+    height: 12px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 6px;
+    overflow: hidden;
+}
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: var(--primary-gradient);
+    border-radius: 6px;
+    transition: width 1.5s cubic-bezier(0.1, 0.8, 0.2, 1);
+}
+
+/* Call to Action */
+.cta-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: #FFFFFF;
+    color: #000000;
+    box-shadow: 0 0 20px rgba(255,255,255,0.2);
+}
+.btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255,255,255,0.4);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #FFFFFF;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+.btn-secondary:hover {
+    background: rgba(255,255,255,0.05);
+    border-color: rgba(255,255,255,0.5);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .gradient-text {
+        font-size: 2.5rem;
+    }
+    .glass-container {
+        margin: 20px;
+        padding: 40px 20px;
+    }
+    .cta-actions {
+        flex-direction: column;
+    }
+}
