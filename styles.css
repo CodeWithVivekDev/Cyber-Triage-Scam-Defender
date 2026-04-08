@@ -137,16 +137,16 @@ body {
 
 /* Pop out effect on hover */
 .card-3d:hover .card-content {
-    box-shadow: 0 30px 60px rgba(0, 112, 243, 0.15), inset 0 2px 0 0 rgba(255,255,255,1);
+    box-shadow: 0 20px 40px rgba(0, 112, 243, 0.1), inset 0 2px 0 0 rgba(255,255,255,1);
 }
 .card-3d:hover .card-icon {
-    transform: translateZ(60px) scale(1.1);
+    transform: translateZ(20px) scale(1.02);
 }
 .card-3d:hover h3 {
-    transform: translateZ(40px);
+    transform: translateZ(10px);
 }
 .card-3d:hover p {
-    transform: translateZ(20px);
+    transform: translateZ(5px);
 }
 
 .card-icon {
@@ -235,7 +235,7 @@ body {
     gap: 24px;
     margin-bottom: 50px;
 }
-.3d-btn {
+.btn-3d {
     text-decoration: none;
     font-family: 'Outfit', sans-serif;
     font-weight: 700;
@@ -281,7 +281,7 @@ body {
     box-shadow: 0 5px 10px rgba(0,0,0,0.05);
 }
 
-.3d-btn span {
+.btn-3d span {
     position: relative;
     z-index: 2;
 }
